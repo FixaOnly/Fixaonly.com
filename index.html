@@ -1,5 +1,267 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Access System — Purple Neon Edition</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+:root {
+    --bg: #000000;
+    --purple: #b784ff;
+    --purple-dark: #7d3ff2;
+    --purple-glow: rgba(183,132,255,0.8);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+/* Particles canvas */
+#canvas-bg {
+    position: fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    z-index: 0;
+}
+
+/* Container */
+.container {
+    position: relative;
+    z-index: 2;
+    max-width: 450px;
+    margin: auto;
+    padding: 40px 30px;
+    border-radius: 20px;
+    border:1px solid rgba(255,255,255,0.1);
+    background: rgba(20,20,20,0.7);
+    backdrop-filter: blur(10px);
+    margin-top: 7vh;
+    box-shadow: 0 0 25px rgba(183,132,255,0.1);
+    animation: popUp .8s ease forwards;
+}
+
+/* Title */
+.title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--purple);
+    text-align: center;
+    margin-bottom: 5px;
+    text-shadow: 0 0 12px var(--purple),0 0 22px var(--purple-dark);
+    animation: glow 3s ease-in-out infinite alternate, flicker 2.6s infinite;
+}
+
+.status {
+    text-align:center;
+    margin-bottom: 30px;
+    font-size:.8rem;
+    letter-spacing:1px;
+    color: var(--purple-glow);
+    text-shadow:0 0 10px var(--purple);
+}
+
+/* Buttons */
+.btn {
+    display: flex;
+    align-items:center;
+    justify-content:space-between;
+    padding: 14px 18px;
+    margin-bottom:12px;
+    background: rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    color:#fff;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.btn:hover {
+    border-color: var(--purple);
+    background: rgba(183,132,255,0.15);
+    box-shadow: 0 0 18px rgba(183,132,255,0.3);
+    transform: translateX(4px);
+}
+
+.btn i {
+    font-size:1.2rem;
+    color: var(--purple);
+    text-shadow:0 0 8px var(--purple);
+}
+
+/* main action */
+.main-btn {
+    width:100%;
+    text-align:center;
+    padding:16px;
+    background:rgba(183,132,255,0.15);
+    border:1px solid var(--purple);
+    border-radius:14px;
+    margin-top:20px;
+    font-weight:700;
+    letter-spacing:1px;
+    cursor:pointer;
+    transition:.25s;
+    color:#fff;
+    text-transform:uppercase;
+}
+
+.main-btn:hover {
+    background:rgba(183,132,255,0.3);
+    box-shadow:0 0 25px var(--purple);
+    letter-spacing:2px;
+}
+
+/* animations */
+@keyframes glow {
+    from { text-shadow:0 0 8px var(--purple) }
+    to { text-shadow:0 0 22px var(--purple-dark),0 0 45px var(--purple-dark) }
+}
+
+@keyframes flicker {
+    0% {opacity:1}
+    10% {opacity:.9}
+    20% {opacity:.75}
+    30% {opacity:1}
+    40% {opacity:.6}
+    50% {opacity:1}
+    70% {opacity:.85}
+    100% {opacity:1}
+}
+
+@keyframes popUp {
+    0% {opacity:0; transform: translateY(40px) scale(.95);}
+    100% {opacity:1; transform: translateY(0) scale(1);}
+}
+
+footer {
+    text-align:center;
+    margin-top:25px;
+    font-size:0.7rem;
+    color:#555;
+    letter-spacing:2px;
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="canvas-bg"></canvas>
+
+<div class="container">
+    <div class="title">Admin Access</div>
+    <div class="status">SYSTEM ONLINE • SECURED</div>
+
+    <!-- WhatsApp -->
+<div class="btn" onclick="window.open('https://wa.me/6281543156112','_blank')">
+    <span><i class="fab fa-whatsapp"></i> WhatsApp</span>
+    <i class="fas fa-chevron-right"></i>
+</div>
+
+<!-- Telegram -->
+<div class="btn" onclick="window.open('https://t.me/FixaOnly','_blank')">
+    <span><i class="fab fa-telegram"></i> Telegram</span>
+    <i class="fas fa-chevron-right"></i>
+</div>
+
+<!-- Instagram -->
+<div class="btn" onclick="window.open('https://instagram.com/fixaxiterz','_blank')">
+    <span><i class="fab fa-instagram"></i> Instagram</span>
+    <i class="fas fa-chevron-right"></i>
+</div>
+
+<!-- Saluran / Cheat -->
+<div class="btn" onclick="window.open('https://whatsapp.com/channel/0029VaxH8JoJf05kyXjGB20A','_blank')">
+    <span><i class="fas fa-gift"></i> Saluran & Cheat</span>
+    <i class="fas fa-chevron-right"></i>
+</div>
+
+<!-- List Harga -->
+<button class="main-btn" onclick="window.open('https://fixateam.store','_blank')">
+    Buka List Harga & Testimoni
+</button>
+
+
+    <footer>© 2025 Fixa Team Systems</footer>
+</div>
+
 <script>
-<!--
-document.write(unescape("%3C%21DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22id%22%3E%0A%3Chead%3E%0A%20%20%20%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%20%20%20%3Cmeta%20name%3D%22viewport%22%20content%3D%22width%3Ddevice-width%2C%20initial-scale%3D1.0%22%3E%0A%20%20%20%20%3Ctitle%3EAdmin%20Access%20System%20%u2014%20Purple%20Neon%20Edition%3C/title%3E%0A%20%20%20%20%3Clink%20href%3D%22https%3A//fonts.googleapis.com/css2%3Ffamily%3DPoppins%3Awght@400%3B600%26family%3DRajdhani%3Awght@500%3B700%26display%3Dswap%22%20rel%3D%22stylesheet%22%3E%0A%20%20%20%20%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css%22%3E%0A%0A%3Cstyle%3E%0A%3Aroot%20%7B%0A%20%20%20%20--bg%3A%20%23000000%3B%0A%20%20%20%20--purple%3A%20%23b784ff%3B%0A%20%20%20%20--purple-dark%3A%20%237d3ff2%3B%0A%20%20%20%20--purple-glow%3A%20rgba%28183%2C132%2C255%2C0.8%29%3B%0A%7D%0A%0A*%20%7B%0A%20%20%20%20margin%3A%200%3B%0A%20%20%20%20padding%3A%200%3B%0A%20%20%20%20box-sizing%3A%20border-box%3B%0A%7D%0A%0Abody%20%7B%0A%20%20%20%20background%3A%20var%28--bg%29%3B%0A%20%20%20%20color%3A%20%23fff%3B%0A%20%20%20%20font-family%3A%20%27Poppins%27%2C%20sans-serif%3B%0A%20%20%20%20overflow%3A%20hidden%3B%0A%7D%0A%0A/*%20Particles%20canvas%20*/%0A%23canvas-bg%20%7B%0A%20%20%20%20position%3A%20fixed%3B%0A%20%20%20%20top%3A0%3B%20left%3A0%3B%0A%20%20%20%20width%3A100%25%3B%20height%3A100%25%3B%0A%20%20%20%20z-index%3A%200%3B%0A%7D%0A%0A/*%20Container%20*/%0A.container%20%7B%0A%20%20%20%20position%3A%20relative%3B%0A%20%20%20%20z-index%3A%202%3B%0A%20%20%20%20max-width%3A%20450px%3B%0A%20%20%20%20margin%3A%20auto%3B%0A%20%20%20%20padding%3A%2040px%2030px%3B%0A%20%20%20%20border-radius%3A%2020px%3B%0A%20%20%20%20border%3A1px%20solid%20rgba%28255%2C255%2C255%2C0.1%29%3B%0A%20%20%20%20background%3A%20rgba%2820%2C20%2C20%2C0.7%29%3B%0A%20%20%20%20backdrop-filter%3A%20blur%2810px%29%3B%0A%20%20%20%20margin-top%3A%207vh%3B%0A%20%20%20%20box-shadow%3A%200%200%2025px%20rgba%28183%2C132%2C255%2C0.1%29%3B%0A%20%20%20%20animation%3A%20popUp%20.8s%20ease%20forwards%3B%0A%7D%0A%0A/*%20Title%20*/%0A.title%20%7B%0A%20%20%20%20font-family%3A%20%27Rajdhani%27%2C%20sans-serif%3B%0A%20%20%20%20font-size%3A%203rem%3B%0A%20%20%20%20font-weight%3A%20700%3B%0A%20%20%20%20text-transform%3A%20uppercase%3B%0A%20%20%20%20letter-spacing%3A%204px%3B%0A%20%20%20%20color%3A%20var%28--purple%29%3B%0A%20%20%20%20text-align%3A%20center%3B%0A%20%20%20%20margin-bottom%3A%205px%3B%0A%20%20%20%20text-shadow%3A%200%200%2012px%20var%28--purple%29%2C0%200%2022px%20var%28--purple-dark%29%3B%0A%20%20%20%20animation%3A%20glow%203s%20ease-in-out%20infinite%20alternate%2C%20flicker%202.6s%20infinite%3B%0A%7D%0A%0A.status%20%7B%0A%20%20%20%20text-align%3Acenter%3B%0A%20%20%20%20margin-bottom%3A%2030px%3B%0A%20%20%20%20font-size%3A.8rem%3B%0A%20%20%20%20letter-spacing%3A1px%3B%0A%20%20%20%20color%3A%20var%28--purple-glow%29%3B%0A%20%20%20%20text-shadow%3A0%200%2010px%20var%28--purple%29%3B%0A%7D%0A%0A/*%20Buttons%20*/%0A.btn%20%7B%0A%20%20%20%20display%3A%20flex%3B%0A%20%20%20%20align-items%3Acenter%3B%0A%20%20%20%20justify-content%3Aspace-between%3B%0A%20%20%20%20padding%3A%2014px%2018px%3B%0A%20%20%20%20margin-bottom%3A12px%3B%0A%20%20%20%20background%3A%20rgba%28255%2C255%2C255%2C0.05%29%3B%0A%20%20%20%20border%3A1px%20solid%20rgba%28255%2C255%2C255%2C0.15%29%3B%0A%20%20%20%20border-radius%3A%2012px%3B%0A%20%20%20%20color%3A%23fff%3B%0A%20%20%20%20cursor%3Apointer%3B%0A%20%20%20%20transition%3A.25s%3B%0A%7D%0A%0A.btn%3Ahover%20%7B%0A%20%20%20%20border-color%3A%20var%28--purple%29%3B%0A%20%20%20%20background%3A%20rgba%28183%2C132%2C255%2C0.15%29%3B%0A%20%20%20%20box-shadow%3A%200%200%2018px%20rgba%28183%2C132%2C255%2C0.3%29%3B%0A%20%20%20%20transform%3A%20translateX%284px%29%3B%0A%7D%0A%0A.btn%20i%20%7B%0A%20%20%20%20font-size%3A1.2rem%3B%0A%20%20%20%20color%3A%20var%28--purple%29%3B%0A%20%20%20%20text-shadow%3A0%200%208px%20var%28--purple%29%3B%0A%7D%0A%0A/*%20main%20action%20*/%0A.main-btn%20%7B%0A%20%20%20%20width%3A100%25%3B%0A%20%20%20%20text-align%3Acenter%3B%0A%20%20%20%20padding%3A16px%3B%0A%20%20%20%20background%3Argba%28183%2C132%2C255%2C0.15%29%3B%0A%20%20%20%20border%3A1px%20solid%20var%28--purple%29%3B%0A%20%20%20%20border-radius%3A14px%3B%0A%20%20%20%20margin-top%3A20px%3B%0A%20%20%20%20font-weight%3A700%3B%0A%20%20%20%20letter-spacing%3A1px%3B%0A%20%20%20%20cursor%3Apointer%3B%0A%20%20%20%20transition%3A.25s%3B%0A%20%20%20%20color%3A%23fff%3B%0A%20%20%20%20text-transform%3Auppercase%3B%0A%7D%0A%0A.main-btn%3Ahover%20%7B%0A%20%20%20%20background%3Argba%28183%2C132%2C255%2C0.3%29%3B%0A%20%20%20%20box-shadow%3A0%200%2025px%20var%28--purple%29%3B%0A%20%20%20%20letter-spacing%3A2px%3B%0A%7D%0A%0A/*%20animations%20*/%0A@keyframes%20glow%20%7B%0A%20%20%20%20from%20%7B%20text-shadow%3A0%200%208px%20var%28--purple%29%20%7D%0A%20%20%20%20to%20%7B%20text-shadow%3A0%200%2022px%20var%28--purple-dark%29%2C0%200%2045px%20var%28--purple-dark%29%20%7D%0A%7D%0A%0A@keyframes%20flicker%20%7B%0A%20%20%20%200%25%20%7Bopacity%3A1%7D%0A%20%20%20%2010%25%20%7Bopacity%3A.9%7D%0A%20%20%20%2020%25%20%7Bopacity%3A.75%7D%0A%20%20%20%2030%25%20%7Bopacity%3A1%7D%0A%20%20%20%2040%25%20%7Bopacity%3A.6%7D%0A%20%20%20%2050%25%20%7Bopacity%3A1%7D%0A%20%20%20%2070%25%20%7Bopacity%3A.85%7D%0A%20%20%20%20100%25%20%7Bopacity%3A1%7D%0A%7D%0A%0A@keyframes%20popUp%20%7B%0A%20%20%20%200%25%20%7Bopacity%3A0%3B%20transform%3A%20translateY%2840px%29%20scale%28.95%29%3B%7D%0A%20%20%20%20100%25%20%7Bopacity%3A1%3B%20transform%3A%20translateY%280%29%20scale%281%29%3B%7D%0A%7D%0A%0Afooter%20%7B%0A%20%20%20%20text-align%3Acenter%3B%0A%20%20%20%20margin-top%3A25px%3B%0A%20%20%20%20font-size%3A0.7rem%3B%0A%20%20%20%20color%3A%23555%3B%0A%20%20%20%20letter-spacing%3A2px%3B%0A%7D%0A%3C/style%3E%0A%3C/head%3E%0A%0A%3Cbody%3E%0A%0A%3Ccanvas%20id%3D%22canvas-bg%22%3E%3C/canvas%3E%0A%0A%3Cdiv%20class%3D%22container%22%3E%0A%20%20%20%20%3Cdiv%20class%3D%22title%22%3EAdmin%20Access%3C/div%3E%0A%20%20%20%20%3Cdiv%20class%3D%22status%22%3ESYSTEM%20ONLINE%20%u2022%20SECURED%3C/div%3E%0A%0A%20%20%20%20%3C%21--%20WhatsApp%20--%3E%0A%3Cdiv%20class%3D%22btn%22%20onclick%3D%22window.open%28%27https%3A//wa.me/6281543156112%27%2C%27_blank%27%29%22%3E%0A%20%20%20%20%3Cspan%3E%3Ci%20class%3D%22fab%20fa-whatsapp%22%3E%3C/i%3E%20WhatsApp%3C/span%3E%0A%20%20%20%20%3Ci%20class%3D%22fas%20fa-chevron-right%22%3E%3C/i%3E%0A%3C/div%3E%0A%0A%3C%21--%20Telegram%20--%3E%0A%3Cdiv%20class%3D%22btn%22%20onclick%3D%22window.open%28%27https%3A//t.me/FixaOnly%27%2C%27_blank%27%29%22%3E%0A%20%20%20%20%3Cspan%3E%3Ci%20class%3D%22fab%20fa-telegram%22%3E%3C/i%3E%20Telegram%3C/span%3E%0A%20%20%20%20%3Ci%20class%3D%22fas%20fa-chevron-right%22%3E%3C/i%3E%0A%3C/div%3E%0A%0A%3C%21--%20Instagram%20--%3E%0A%3Cdiv%20class%3D%22btn%22%20onclick%3D%22window.open%28%27https%3A//instagram.com/fixaxiterz%27%2C%27_blank%27%29%22%3E%0A%20%20%20%20%3Cspan%3E%3Ci%20class%3D%22fab%20fa-instagram%22%3E%3C/i%3E%20Instagram%3C/span%3E%0A%20%20%20%20%3Ci%20class%3D%22fas%20fa-chevron-right%22%3E%3C/i%3E%0A%3C/div%3E%0A%0A%3C%21--%20Saluran%20/%20Cheat%20--%3E%0A%3Cdiv%20class%3D%22btn%22%20onclick%3D%22window.open%28%27https%3A//whatsapp.com/channel/0029VaxH8JoJf05kyXjGB20A%27%2C%27_blank%27%29%22%3E%0A%20%20%20%20%3Cspan%3E%3Ci%20class%3D%22fas%20fa-gift%22%3E%3C/i%3E%20Saluran%20%26%20Cheat%3C/span%3E%0A%20%20%20%20%3Ci%20class%3D%22fas%20fa-chevron-right%22%3E%3C/i%3E%0A%3C/div%3E%0A%0A%3C%21--%20List%20Harga%20--%3E%0A%3Cbutton%20class%3D%22main-btn%22%20onclick%3D%22window.open%28%27https%3A//fixateam.store%27%2C%27_blank%27%29%22%3E%0A%20%20%20%20Buka%20List%20Harga%20%26%20Testimoni%0A%3C/button%3E%0A%0A%0A%20%20%20%20%3Cfooter%3E%A9%202025%20Fixa%20Team%20Systems%3C/footer%3E%0A%3C/div%3E%0A%0A%3Cscript%3E%0A/*%20Particles%20constellation%20*/%0Aconst%20canvas%3Ddocument.getElementById%28%27canvas-bg%27%29%3B%0Aconst%20ctx%3Dcanvas.getContext%28%272d%27%29%3B%0Acanvas.width%3DinnerWidth%3B%20canvas.height%3DinnerHeight%3B%0Alet%20particlesArray%3B%0A%0Aclass%20Particle%7B%0A%20constructor%28%29%7B%0A%20this.x%3DMath.random%28%29*canvas.width%3B%0A%20this.y%3DMath.random%28%29*canvas.height%3B%0A%20this.size%3DMath.random%28%29*2+1%3B%0A%20this.speedX%3D%28Math.random%28%29-.5%29*.6%3B%0A%20this.speedY%3D%28Math.random%28%29-.5%29*.6%3B%0A%20%7D%0A%20draw%28%29%7B%0A%20ctx.fillStyle%3D%27rgba%28200%2C150%2C255%2C.8%29%27%3B%0A%20ctx.beginPath%28%29%3B%0A%20ctx.arc%28this.x%2Cthis.y%2Cthis.size%2C0%2CMath.PI*2%29%3B%0A%20ctx.fill%28%29%3B%0A%20%7D%0A%20update%28%29%7B%0A%20this.x+%3Dthis.speedX%3B%0A%20this.y+%3Dthis.speedY%3B%0A%20if%28this.x%3C0%7C%7Cthis.x%3Ecanvas.width%29%20this.speedX*%3D-1%3B%0A%20if%28this.y%3C0%7C%7Cthis.y%3Ecanvas.height%29%20this.speedY*%3D-1%3B%0A%20%7D%0A%7D%0A%0Afunction%20init%28%29%7B%0A%20particlesArray%3D%5B%5D%3B%0A%20const%20n%3D%28canvas.width*canvas.height%29/9000%3B%0A%20for%28let%20i%3D0%3Bi%3Cn%3Bi++%29%7B%0A%20particlesArray.push%28new%20Particle%28%29%29%3B%0A%20%7D%0A%7D%0A%0Afunction%20animate%28%29%7B%0A%20requestAnimationFrame%28animate%29%3B%0A%20ctx.clearRect%280%2C0%2Ccanvas.width%2Ccanvas.height%29%3B%0A%20particlesArray.forEach%28p%3D%3E%7Bp.update%28%29%3B%20p.draw%28%29%3B%7D%29%3B%0A%20connect%28%29%3B%0A%7D%0A%0Afunction%20connect%28%29%7B%0A%20for%28let%20a%3D0%3Ba%3CparticlesArray.length%3Ba++%29%7B%0A%20for%28let%20b%3Da%3Bb%3CparticlesArray.length%3Bb++%29%7B%0A%20let%20dx%3DparticlesArray%5Ba%5D.x-particlesArray%5Bb%5D.x%3B%0A%20let%20dy%3DparticlesArray%5Ba%5D.y-particlesArray%5Bb%5D.y%3B%0A%20let%20dist%3Ddx*dx+dy*dy%3B%0A%20if%28dist%3C15000%29%7B%0A%20ctx.strokeStyle%3D%27rgba%28180%2C110%2C255%2C%27+%281-dist/15000%29+%27%29%27%3B%0A%20ctx.lineWidth%3D.8%3B%0A%20ctx.beginPath%28%29%3B%0A%20ctx.moveTo%28particlesArray%5Ba%5D.x%2CparticlesArray%5Ba%5D.y%29%3B%0A%20ctx.lineTo%28particlesArray%5Bb%5D.x%2CparticlesArray%5Bb%5D.y%29%3B%0A%20ctx.stroke%28%29%3B%0A%20%7D%0A%20%7D%0A%20%7D%0A%7D%0A%0Ainit%28%29%3B%20animate%28%29%3B%0A%3C/script%3E%0A%3C/body%3E%0A%3C/html%3E"));
-//-->
+/* Particles constellation */
+const canvas=document.getElementById('canvas-bg');
+const ctx=canvas.getContext('2d');
+canvas.width=innerWidth; canvas.height=innerHeight;
+let particlesArray;
+
+class Particle{
+ constructor(){
+ this.x=Math.random()*canvas.width;
+ this.y=Math.random()*canvas.height;
+ this.size=Math.random()*2+1;
+ this.speedX=(Math.random()-.5)*.6;
+ this.speedY=(Math.random()-.5)*.6;
+ }
+ draw(){
+ ctx.fillStyle='rgba(200,150,255,.8)';
+ ctx.beginPath();
+ ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
+ ctx.fill();
+ }
+ update(){
+ this.x+=this.speedX;
+ this.y+=this.speedY;
+ if(this.x<0||this.x>canvas.width) this.speedX*=-1;
+ if(this.y<0||this.y>canvas.height) this.speedY*=-1;
+ }
+}
+
+function init(){
+ particlesArray=[];
+ const n=(canvas.width*canvas.height)/9000;
+ for(let i=0;i<n;i++){
+ particlesArray.push(new Particle());
+ }
+}
+
+function animate(){
+ requestAnimationFrame(animate);
+ ctx.clearRect(0,0,canvas.width,canvas.height);
+ particlesArray.forEach(p=>{p.update(); p.draw();});
+ connect();
+}
+
+function connect(){
+ for(let a=0;a<particlesArray.length;a++){
+ for(let b=a;b<particlesArray.length;b++){
+ let dx=particlesArray[a].x-particlesArray[b].x;
+ let dy=particlesArray[a].y-particlesArray[b].y;
+ let dist=dx*dx+dy*dy;
+ if(dist<15000){
+ ctx.strokeStyle='rgba(180,110,255,'+(1-dist/15000)+')';
+ ctx.lineWidth=.8;
+ ctx.beginPath();
+ ctx.moveTo(particlesArray[a].x,particlesArray[a].y);
+ ctx.lineTo(particlesArray[b].x,particlesArray[b].y);
+ ctx.stroke();
+ }
+ }
+ }
+}
+
+init(); animate();
 </script>
+</body>
+</html>
